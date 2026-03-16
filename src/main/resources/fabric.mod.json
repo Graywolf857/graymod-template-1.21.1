@@ -16,7 +16,7 @@
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"com.toltonic.graymod.Graymod"
+			"com.toltonic.graymod.GrayMod"
 		],
 		"fabric-datagen": [
 			"com.toltonic.graymod.GraymodDataGenerator"
