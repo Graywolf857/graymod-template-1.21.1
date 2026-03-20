@@ -1,6 +1,7 @@
 package com.toltonic.graymod.item;
 
 import com.toltonic.graymod.GrayMod;
+import com.toltonic.graymod.item.custom.LavaWand;
 import com.toltonic.graymod.item.custom.TreeWand;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.item.Item;
@@ -10,7 +11,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
 public class ModItems {
-    public static final Item LAVA_WAND = registerItem("lava_wand", new Item(new Item.Settings()));
+    public static final Item LAVA_WAND = registerItem("lava_wand", new LavaWand(new Item.Settings()));
 
     public static final Item TREE_WAND = registerItem("tree_wand", new TreeWand(new Item.Settings()));
 
