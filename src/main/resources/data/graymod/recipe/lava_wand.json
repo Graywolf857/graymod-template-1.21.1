@@ -1,0 +1,23 @@
+{
+"type": "minecraft:crafting_shaped",
+  "pattern": [
+    " XR",
+    " WX",
+    "W  "
+  ],
+  "key": {
+    "W": {
+      "tag": "minecraft:stick"
+    },
+    "R": {
+      "item": "minecraft:magma_block"
+    },
+    "X": {
+      "item": "minecraft:redstone"
+    },
+    "result": {
+      "id": "graymod:lava_wand",
+      "count": 1
+    }
+  }
+}
