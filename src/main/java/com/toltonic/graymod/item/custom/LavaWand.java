@@ -10,6 +10,9 @@ import net.minecraft.world.World;
 
 public class LavaWand extends Item {
 
+    private int mana;
+	private int manaAdded;
+
     public LavaWand(Settings settings) {
         super(settings);
     }
@@ -19,10 +22,33 @@ public class LavaWand extends Item {
 
         World world = context.getWorld();
         BlockPos pos = context.getBlockPos().offset(context.getSide());
+		Block clickedBlock = world.getBlockState(context.getBlockPos()).getBlock();
 
-        if(!world.isClient){
-            world.setBlockState(pos, Blocks.LAVA.getDefaultState());
-        }
+		if(mana >= 1){
+				if(!world.isClient){
+						world.setBlockState(pos, Blocks.LAVA.getDefaultState());
+
+						mana--;
+
+				}
+		}else if(!world.isClient && clickedBlock == Blocks.DIAMOND_BLOCK){
+				addMana(1);
+		}else if(mana == 0){
+				mana = 0;
+		}
+
         return super.useOnBlock(context);
     }
+
+
+	public int getMana(){
+			
+		return mana;
+    }
+
+	public int addMana(int manaAdded){
+			mana = mana + manaAdded;
+			return mana;
+	}
+
 }
