@@ -10,7 +10,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 
-public class TreeWand extends Item {
+public class TreeWand extends WandItem {
+
     public TreeWand(Settings settings) {
         super(settings);
     }
@@ -24,6 +25,7 @@ public class TreeWand extends Item {
         if(clickedBlock == Blocks.DIRT || clickedBlock == Blocks.GRASS_BLOCK) {
             if(!world.isClient()) {
                 world.setBlockState(pos, Blocks.OAK_SAPLING.getDefaultState());
+
             }
         }
 

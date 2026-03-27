@@ -8,10 +8,8 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class LavaWand extends Item {
+public class LavaWand extends WandItem{
 
-    private int mana;
-	private int manaAdded;
 
     public LavaWand(Settings settings) {
         super(settings);
@@ -21,14 +19,18 @@ public class LavaWand extends Item {
     public ActionResult useOnBlock(ItemUsageContext context) {
 
         World world = context.getWorld();
+
         BlockPos pos = context.getBlockPos().offset(context.getSide());
+
 		Block clickedBlock = world.getBlockState(context.getBlockPos()).getBlock();
+
+		
 
 		if(mana >= 1){
 				if(!world.isClient){
 						world.setBlockState(pos, Blocks.LAVA.getDefaultState());
 
-						mana--;
+						removeMana(1);
 
 				}
 		}else if(!world.isClient && clickedBlock == Blocks.DIAMOND_BLOCK){
@@ -41,14 +43,6 @@ public class LavaWand extends Item {
     }
 
 
-	public int getMana(){
-			
-		return mana;
-    }
-
-	public int addMana(int manaAdded){
-			mana = mana + manaAdded;
-			return mana;
-	}
+	
 
 }
