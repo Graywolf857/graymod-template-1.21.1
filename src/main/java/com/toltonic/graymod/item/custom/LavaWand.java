@@ -24,6 +24,8 @@ public class LavaWand extends WandItem{
 
 		Block clickedBlock = world.getBlockState(context.getBlockPos()).getBlock();
 
+		int mana = WandItem.getMana();
+
 		
 
 		if(mana >= 1){

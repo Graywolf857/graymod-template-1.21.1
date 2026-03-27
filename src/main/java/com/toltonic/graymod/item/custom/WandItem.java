@@ -10,7 +10,7 @@ public class WandItem extends Item {
         super(settings);
     }
 
-    public int getMana(){
+    public static int getMana(){
 			
 			return mana;
 		}
